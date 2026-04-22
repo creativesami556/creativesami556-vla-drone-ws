@@ -1,6 +1,6 @@
 {
   "name": "VLA Drone Workspace",
-  "image": "px4io/px4-dev-ros2-humble:latest",
+  "image": "osrf/ros:humble-desktop-full",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
   },
