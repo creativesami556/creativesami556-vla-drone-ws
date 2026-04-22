@@ -9,7 +9,7 @@
     "DISPLAY": ":1",
     "ROS_DOMAIN_ID": "0"
   },
-  "postCreateCommand": "bash /workspaces/vla-drone-ws/.devcontainer/setup.sh",
+  "postCreateCommand": "bash /workspaces/creativesami556-vla-drone-ws/.devcontainer/setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
