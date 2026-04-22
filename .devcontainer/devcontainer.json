@@ -1,9 +1,8 @@
 {
   "name": "VLA Drone Workspace",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "image": "px4io/px4-dev-ros2-humble:latest",
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/python:1": {}
+    "ghcr.io/devcontainers/features/git:1": {}
   },
   "runArgs": ["--network=host", "--privileged"],
   "containerEnv": {
