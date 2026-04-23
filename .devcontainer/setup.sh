@@ -71,7 +71,7 @@ bash ./Tools/setup/ubuntu.sh --no-nuttx 2>&1 | tail -5
 log "PX4-Autopilot cloned ✓"
 
 log "STEP 6/7: Cloning paper's ROS2 agent workspace"
-cd /workspaces/vla-drone-ws
+cd /workspaces/creativesami556-vla-drone-ws
 if [ ! -d "ros2-px4-agent-ws" ]; then
     git clone --recurse-submodules \
         https://github.com/limshoonkit/ros2-px4-agent-ws.git --quiet
