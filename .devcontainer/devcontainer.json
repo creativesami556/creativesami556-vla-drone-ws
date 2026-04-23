@@ -1,28 +1,41 @@
 {
   "name": "VLA Drone Workspace",
-  "image": "osrf/ros:humble-desktop-full",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest",
+      "noVncVersion": "1.4.0",
+      "password": "drone123",
+      "webPort": "6080",
+      "vncPort": "5901"
+    }
   },
-  "runArgs": ["--network=host", "--privileged"],
+  "runArgs": ["--privileged", "--shm-size=512m"],
   "containerEnv": {
     "DISPLAY": ":1",
+    "DEBIAN_FRONTEND": "noninteractive",
     "ROS_DOMAIN_ID": "0"
   },
-  "postCreateCommand": "bash /workspaces/creativesami556-vla-drone-ws/.devcontainer/setup.sh",
+  "postCreateCommand": "bash /workspaces/vla-drone-ws/.devcontainer/setup.sh 2>&1 | tee /tmp/setup.log",
+  "forwardPorts": [6080, 5901, 5000, 4040, 8888, 14550],
+  "portsAttributes": {
+    "6080": {
+      "label": "🖥️ Gazebo Visual Desktop",
+      "onAutoForward": "openBrowser"
+    },
+    "5000": {"label": "VLA Flask API"},
+    "4040": {"label": "ngrok Dashboard"},
+    "8888": {"label": "XRCE-DDS Bridge"},
+    "14550": {"label": "MAVLink / QGC"}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-vscode.cpptools",
-        "twxs.cmake"
+        "twxs.cmake",
+        "ms-iot.vscode-ros"
       ]
     }
-  },
-  "forwardPorts": [6080, 5000, 4040],
-  "portsAttributes": {
-    "6080": {"label": "Gazebo Display"},
-    "5000": {"label": "VLA Flask API"},
-    "4040": {"label": "ngrok Dashboard"}
   }
 }
