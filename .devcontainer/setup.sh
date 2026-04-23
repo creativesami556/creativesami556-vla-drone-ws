@@ -61,7 +61,7 @@ sudo ldconfig
 log "Micro-XRCE-DDS Agent v2.4.2 installed ✓"
 
 log "STEP 5/7: Cloning PX4-Autopilot"
-cd /workspaces/vla-drone-ws
+cd /workspaces/creativesami556-vla-drone-ws
 if [ ! -d "PX4-Autopilot" ]; then
     git clone https://github.com/PX4/PX4-Autopilot.git --recursive --depth=1 --quiet
 fi
