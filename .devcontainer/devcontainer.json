@@ -16,7 +16,7 @@
     "DEBIAN_FRONTEND": "noninteractive",
     "ROS_DOMAIN_ID": "0"
   },
-  "postCreateCommand": "bash /workspaces/vla-drone-ws/.devcontainer/setup.sh 2>&1 | tee /tmp/setup.log",
+ "postCreateCommand": "bash .devcontainer/setup.sh 2>&1 | tee /tmp/setup.log",
   "forwardPorts": [6080, 5901, 5000, 4040, 8888, 14550],
   "portsAttributes": {
     "6080": {
